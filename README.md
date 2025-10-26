@@ -26,13 +26,10 @@ This repository demonstrates a clean implementation of the **Observer** design p
 ```cpp
 NewsPublisher publisher;
 
-UserObserver user1("Alice");
-UserObserver user2("Bob");
+UserObserver dmytro("Dmytro");
 
-publisher.attach(&user1);
-publisher.attach(&user2);
+publisher.subscribe(&dmytro);
 
-publisher.setNews("Design patterns are awesome!");
+publisher.notify("Breaking news: Observer pattern rocks!");
 // Output:
-// Alice received news: Design patterns are awesome!
-// Bob received news: Design patterns are awesome!
+// [Dmytro] Received: Breaking news: Observer pattern rocks!
